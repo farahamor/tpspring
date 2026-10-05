@@ -1,10 +1,10 @@
-package tn.esprit.ahlembensalem4cce11;
+package tn.esprit.farahamor4dasi7;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Ahlembensalem4Cce11ApplicationTests {
+class Farahamor4dasi7 {
 
     @Test
     void contextLoads() {
