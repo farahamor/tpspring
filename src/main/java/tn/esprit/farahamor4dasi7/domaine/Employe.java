@@ -1,5 +1,4 @@
-
-package tn.esprit.ahlembensalem4cce11.domaine;
+package tn.esprit.farahamor4dasi7.domaine;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,4 +22,8 @@ public class Employe {
 
     @Enumerated(EnumType.STRING)
     private RoleEmploye role;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_agence")
+    private Agence agence;
 }

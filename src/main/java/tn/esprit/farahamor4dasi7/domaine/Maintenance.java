@@ -1,5 +1,4 @@
-
-package tn.esprit.ahlembensalem4cce11.domaine;
+package tn.esprit.farahamor4dasi7.domaine;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,4 +21,8 @@ public class Maintenance {
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_vehicule")
+    private Vehicule vehicule;
 }

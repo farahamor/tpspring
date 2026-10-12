@@ -1,5 +1,4 @@
-
-package tn.esprit.ahlembensalem4cce11.domaine;
+package tn.esprit.farahamor4dasi7.domaine;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,6 +6,8 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,7 +17,6 @@ import java.time.LocalDate;
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idClient;
 
     private String nom;
@@ -25,4 +25,11 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
+
+    @OneToMany(
+        mappedBy = "client",
+        cascade = CascadeType.PERSIST,
+        fetch = FetchType.LAZY
+    )
+    private List<Reservation> reservations = new ArrayList<>();
 }
