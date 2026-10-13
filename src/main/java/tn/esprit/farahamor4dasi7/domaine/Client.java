@@ -17,6 +17,7 @@ import java.util.List;
 public class Client {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idClient;
 
     private String nom;
